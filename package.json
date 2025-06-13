@@ -1,0 +1,23 @@
+{
+  "name": "ihc-ufpr-virtual",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite-plugin-vuetify": "^2.1.1",
+    "vue": "^3.5.13",
+    "vuetify": "^3.8.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
+    "tailwindcss": "^4.1.10",
+    "vite": "^6.3.5"
+  }
+}

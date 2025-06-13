@@ -1,0 +1,96 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Local env files
+.env
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor folders and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional Yarn stuff
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Yarn integrity and lock
+.yarnrc.yml
+.pnp.*
+.pnp
+
+# Test coverage
+coverage/
+
+# JetBrains IDEs
+*.iml
+out/
+
+# Optional: Ignore Storybook build if usar futuramente
+storybook-static/
+
+# Optional: Ignore stylelint / eslint cache
+.stylelintcache
+.eslintcache
+
+# Optional: VSCode settings
+.vscode/*
+
+# Optional: Tailwind JIT cache
+.tailwind-cache/
+
+# Optional: TypeScript cache (caso use no futuro)
+.cache/
