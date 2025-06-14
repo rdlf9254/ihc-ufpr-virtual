@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="mt-4">
+    <v-container fluid class="mt-4 h-100 main-seadip">
       <v-row>
         <v-col cols="12" md="6">
           <h2 class="text-h5 mb-4">Conteúdos para você</h2>
@@ -123,5 +123,7 @@
   </script>
   
   <style scoped>
-  /* Custom styles for card spacing, shadows, etc. */
+  .main-seadip{
+    background-color: #F3F3F3;
+  }
   </style>
