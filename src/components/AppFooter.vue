@@ -1,8 +1,5 @@
 <template>
-  <div class="d-flex">
-    <div class="bg-blue-500 text-white p-4 rounded-lg">
-  Teste do Tailwind
-</div>
+  <div class="d-flex w-100 justify-content-center align-items-center" style="background-color: #41557E; height: 95px">
     <svg
       width="170"
       height="66"
