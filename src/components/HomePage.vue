@@ -1,7 +1,15 @@
 <template>
   <div class="">
-    <div class="header d-flex flex-row justify-content-between" style="width: 1800px">
-      <v-img :src="ufprVirtualLogo" max-height="60" contain class="mx-auto"></v-img>
+    <div
+      class="header d-flex flex-row justify-content-between"
+      style="width: 1800px"
+    >
+      <v-img
+        :src="ufprVirtualLogo"
+        max-height="60"
+        contain
+        class="mx-auto"
+      ></v-img>
     </div>
 
     <h2 class="content-para text-h5 mb-4">Conteúdos para <span>você</span></h2>
@@ -17,7 +25,10 @@
     </div>
   </div>
 
-  <div class="menu2 d-flex flex-row" style="gap:300px">
+  <div
+    class="menu2 d-flex flex-row justify-content-center"
+    style="gap: 5rem; width: 100vw"
+  >
     <img :src="suporteIcon" alt="Suporte ao usuário" class="menu-icon" />
     <img :src="virtualIcon" alt="UFPR Virtual" class="menu-icon" />
     <img :src="oficialIcon" alt="Site oficial" class="menu-icon" />
@@ -26,40 +37,15 @@
   <v-container fluid class="mt-4 h-100 main-seadip">
     <v-row>
       <v-col cols="12" md="6">
-        <v-img src="/path/to/main-hero-image.png" aspect-ratio="1.7" cover class="rounded-lg"></v-img>
+        <v-img
+          src="/path/to/main-hero-image.png"
+          aspect-ratio="1.7"
+          cover
+          class="rounded-lg"
+        ></v-img>
       </v-col>
     </v-row>
 
-    <v-row class="mt-8">
-      <v-col cols="12" sm="6" md="3">
-        <v-card color="#f7f7f7" class="pa-4 text-center">
-          <v-icon size="48" color="orange-darken-2">mdi-help-circle-outline</v-icon>
-          <div class="text-subtitle-1 font-weight-bold mt-2">
-            Suporte ao usuário
-          </div>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card color="#e3f2fd" class="pa-4 text-center">
-          <v-img :src="ufprVirtualLogo" max-height="60" contain class="mx-auto"></v-img>
-          <div class="text-subtitle-1 font-weight-bold mt-2">UFPR virtual</div>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card color="#eeeeee" class="pa-4 text-center">
-          <v-img src="/path/to/ufpr-site-logo.png" max-height="60" contain class="mx-auto"></v-img>
-          <div class="text-subtitle-1 font-weight-bold mt-2">Site oficial</div>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card color="#e0f7fa" class="pa-4 text-center">
-          <v-icon size="48" color="light-blue-darken-2">mdi-information-outline</v-icon>
-          <div class="text-subtitle-1 font-weight-bold mt-2">
-            Sobre a UFPR Aberta
-          </div>
-        </v-card>
-      </v-col>
-    </v-row>
     <v-container>
       <v-row align="center">
         <v-col cols="12" md="4" class="d-flex justify-center justify-md-start">
@@ -67,13 +53,22 @@
           <v-btn color="#007bff" dark>Versão com libras</v-btn>
         </v-col>
         <v-col cols="12" md="4" class="text-center">
-          <v-img src="/path/to/seadip-logo.png" max-height="40" contain class="mx-auto"></v-img>
+          <v-img
+            src="/path/to/seadip-logo.png"
+            max-height="40"
+            contain
+            class="mx-auto"
+          ></v-img>
           <div class="text-caption mt-2">
             Superintendência de Educação a Distância <br />
             © 2023 Todos os direitos reservados
           </div>
         </v-col>
-        <v-col cols="12" md="4" class="d-flex justify-center justify-md-end align-center">
+        <v-col
+          cols="12"
+          md="4"
+          class="d-flex justify-center justify-md-end align-center"
+        >
           <v-btn text small @click="increaseFont">A+</v-btn>
           <span class="mx-2">aumentar fonte</span>
           <v-btn text small @click="decreaseFont">A-</v-btn>
@@ -119,11 +114,10 @@ import sobreIcon from "../assets/menus2/sobre.svg";
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #00BCF4;
+  color: #00bcf4;
 
   span {
-    color: #ED8038
+    color: #ed8038;
   }
-
 }
 </style>
