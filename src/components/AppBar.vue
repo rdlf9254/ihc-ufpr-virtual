@@ -1,7 +1,7 @@
 <template>
   <div
     class="d-flex flex-row w-100 justify-content-center align-items-center"
-    style="background-color: #081c44; height: 55px; gap:300px"
+    style="background-color: #081c44; height: 55px; gap: 300px"
   >
     <svg
       width="80"
@@ -35,7 +35,11 @@
     </svg>
 
     <div class="d-flex flex-row">
-      <div v-for="item,i in menuItems" class="d-flex flex-row justify-content-center align-items-center"style="cursor:pointer">
+      <div
+        v-for="(item, i) in menuItems"
+        class="d-flex flex-row justify-content-center align-items-center"
+        style="cursor: pointer"
+      >
         <div v-if="i != 0" class="divider ml-4 mr-4"></div>
         <div class="menu-item">{{ item }}</div>
       </div>
@@ -62,11 +66,11 @@ const menuItems = [
 } */
 .menu-item {
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
 .divider {
-  border-left: 1px solid #FFFFFF66;
-  height: 30px
+  border-left: 1px solid #ffffff66;
+  height: 30px;
 }
 </style>
