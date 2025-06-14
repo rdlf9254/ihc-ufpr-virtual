@@ -12,6 +12,7 @@
       ></v-img>
     </div>
 
+        <h2 class="content-para text-h5 mb-4">Conteúdos para <span>você</span></h2>
     <div class="menus d-flex flex-column gap-5">
       <div class="d-flex flex-row" style="gap: 150px">
         <img :src="moocIcon" alt="MOOC" class="menu-icon" />
@@ -183,5 +184,17 @@ import extIcon from "../assets/menus/ext.svg";
 
 .menu-icon:hover {
   transform: scale(1.1);
+}
+.content-para{
+  font-family: Josefin Sans;
+font-weight: 700;
+font-size: 48px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #00BCF4;
+span{
+  color: #ED8038
+}
+
 }
 </style>
