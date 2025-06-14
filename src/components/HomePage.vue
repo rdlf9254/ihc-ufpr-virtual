@@ -13,11 +13,11 @@
     </div>
 
     <div class="menus d-flex flex-column gap-5">
-      <div class="d-flex flex-row gap-7">
+      <div class="d-flex flex-row" style="gap: 150px">
         <img :src="moocIcon" alt="MOOC" class="menu-icon" />
         <img :src="microsIcon" alt="Micros" class="menu-icon" />
       </div>
-      <div class="d-flex flex-row">
+      <div class="d-flex flex-row" style="gap: 150px">
         <img :src="eventosIcon" alt="Eventos" class="menu-icon" />
         <img :src="extIcon" alt="Extensão" class="menu-icon" />
       </div>
