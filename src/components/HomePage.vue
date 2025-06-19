@@ -35,17 +35,6 @@
     <img :src="sobreIcon" alt="Sobre a UFPR Aberta" class="menu-icon" />
   </div>
   <v-container fluid class="mt-4 h-100 main-seadip">
-    <v-row>
-      <v-col cols="12" md="6">
-        <v-img
-          src="/path/to/main-hero-image.png"
-          aspect-ratio="1.7"
-          cover
-          class="rounded-lg"
-        ></v-img>
-      </v-col>
-    </v-row>
-
     <v-container>
       <v-row align="center">
         <v-col cols="12" md="4" class="d-flex justify-center justify-md-start">
