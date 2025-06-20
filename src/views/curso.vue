@@ -2,7 +2,7 @@
   <div id="app-container">
     <header class="main-header">
       <div class="header-top">
-        <a href="#" class="back-link">
+        <a href="#" class="back-link" @click="gotoHome()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="header-bottom">
-        <h1 class="main-title">abertaMICRO - Microaprendizagem</h1>
+        <h1 class="main-title">{{ title }}</h1>
         <div class="search-container">
           <input type="text" placeholder="Buscar..." class="search-input" />
           <button class="search-button">
@@ -51,7 +51,7 @@
     </header>
 
     <main class="course-grid">
-      <div v-for="curso in cursos" :key="curso.id" class="course-card">
+      <div v-for="curso in curso?.cursos" :key="curso.id" class="course-card">
         <div class="card-header"></div>
         <div class="card-body">
           <h2 class="course-title">{{ curso.titulo }}</h2>
@@ -73,10 +73,13 @@ export default {
   name: "Cursos",
   data() {
     return {
+      curso: null,
+      cursoId: null,
+      // Dados dos cursos
       dados: {
         mooc: {
           corHead: "#00BCF4",
-          cotbotao: "#ED8038",
+          corBotao: "#ED8038",
           cursos: [
             {
               id: 1,
@@ -93,14 +96,32 @@ export default {
             {
               id: 3,
               titulo: "Curso 3",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 4,
+              titulo: "Curso 4",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 5,
+              titulo: "Curso 5",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 6,
+              titulo: "Curso 6",
               cargaHoraria: "12h",
               metodologia: "Gamificação",
             },
           ],
         },
         micro: {
-          corHead: "#00BCF4",
-          cotbotao: "#ED8038",
+          corHead: "#ED8038",
+          corBotao: "#00BCF4",
           cursos: [
             {
               id: 1,
@@ -120,23 +141,147 @@ export default {
               cargaHoraria: "12h",
               metodologia: "Gamificação",
             },
+            {
+              id: 4,
+              titulo: "Curso 4",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 5,
+              titulo: "Curso 5",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 6,
+              titulo: "Curso 6",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+          ],
+        },
+        eventos: {
+          corHead: "#A2DD28",
+          corBotao: "#6959EA",
+          cursos: [
+            {
+              id: 1,
+              titulo: "Curso 1",
+              cargaHoraria: "10h",
+              metodologia: "Vídeos e textos",
+            },
+            {
+              id: 2,
+              titulo: "Curso 2",
+              cargaHoraria: "8h",
+              metodologia: "Interativo",
+            },
+            {
+              id: 3,
+              titulo: "Curso 3",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 4,
+              titulo: "Curso 4",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 5,
+              titulo: "Curso 5",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 6,
+              titulo: "Curso 6",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+          ],
+        },
+        extensao: {
+          corHead: "#6959EA",
+          corBotao: "#A2DD28",
+          cursos: [
+            {
+              id: 1,
+              titulo: "Curso 1",
+              cargaHoraria: "10h",
+              metodologia: "Vídeos e textos",
+            },
+            {
+              id: 2,
+              titulo: "Curso 2",
+              cargaHoraria: "8h",
+              metodologia: "Interativo",
+            },
+            {
+              id: 3,
+              titulo: "Curso 3",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 4,
+              titulo: "Curso 4",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 5,
+              titulo: "Curso 5",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+            {
+              id: 6,
+              titulo: "Curso 6",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
           ],
         },
       },
+      titles: {
+        mooc: "abertaMOOC - Cursos Gratuitos",
+        micro: "abertaMICRO - Microaprendizagem",
+        eventos: "abertaEVENTOS - Eventos Online",
+        extensao: "abertaEXT - Ações de Extensão",
+      },
+      title: "Cursos",
     };
   },
   computed: {
-    cursoId() {
-      return this.$route.params.cursoId;
-    },
-    cursos() {
-      return this.dados[this.cursoId]?.cursos ?? null;
-    },
-    corHead() {
-      return this.dados[this.cursoId]?.corHead ?? null;
-    },
-    corBotao() {
-      return this.dados[this.cursoId]?.corBotao ?? null;
+    // cursoId() {
+    //   return this.$route.params.cursoId;
+    // },
+    // cursos() {
+    //   return this.dados[this.cursoId]?.cursos ?? null;
+    // },
+    // corHead() {
+    //   return this.dados[this.cursoId]?.corHead ?? null;
+    // },
+    // corBotao() {
+    //   return this.dados[this.cursoId]?.corBotao ?? null;
+    // },
+  },
+  mounted() {
+    this.cursoId = this.$route.params.cursoId;
+    if (!this.cursoId) {
+      console.log("nao achei");
+      this.$router.push({ name: "Home" });
+    } else {
+      this.curso = this.dados[this.cursoId] ?? null;
+      this.title = this.titles[this.cursoId] || "Cursos";
+    }
+  },
+  methods: {
+    gotoHome() {
+      this.$router.push({ name: "Home" });
     },
   },
 };

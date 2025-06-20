@@ -31,10 +31,10 @@
             />
             <img
               :src="microsIcon"
-              alt="Micros"
+              alt="micro"
               class="menu-icon"
               height="100px"
-              @click="goToPage('micros')"
+              @click="goToPage('micro')"
             />
           </div>
           <div class="d-flex flex-row" style="gap: 50px">
