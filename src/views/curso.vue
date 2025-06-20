@@ -51,8 +51,15 @@
     </header>
 
     <main class="course-grid">
-      <div v-for="curso in cursoData?.cursos" :key="curso.id" class="course-card">
-        <div class="card-header" :style="{ backgroundColor: cursoData.corHead }"></div>
+      <div
+        v-for="curso in cursoData?.cursos"
+        :key="curso.id"
+        class="course-card"
+      >
+        <div
+          class="card-header"
+          :style="{ backgroundColor: cursoData.corHead }"
+        ></div>
         <div class="card-body">
           <h2 class="course-title">{{ curso.titulo }}</h2>
           <p class="course-info">
@@ -61,7 +68,12 @@
           <p class="course-info">
             <strong>Metodologia:</strong> {{ curso.metodologia }}
           </p>
-          <a href="#" class="details-button" :style="{ backgroundColor: cursoData.corBotao }">Ver mais</a>
+          <a
+            href="#"
+            class="details-button"
+            :style="{ backgroundColor: cursoData.corBotao }"
+            >Ver mais</a
+          >
         </div>
       </div>
     </main>
@@ -83,39 +95,39 @@ export default {
           cursos: [
             {
               id: 1,
-              titulo: "Curso 1",
+              titulo: "Fundamentos de Programação em Python",
               cargaHoraria: "10h",
-              metodologia: "Vídeos e textos",
+              metodologia: "Laboratório Interativo",
             },
             {
               id: 2,
-              titulo: "Curso 2",
+              titulo: "Design de Interfaces com Figma",
               cargaHoraria: "8h",
-              metodologia: "Interativo",
+              metodologia: "Estudos de Caso",
             },
             {
               id: 3,
-              titulo: "Curso 3",
+              titulo: "Introdução ao Marketing Digital",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Podcast Temático",
             },
             {
               id: 4,
-              titulo: "Curso 4",
+              titulo: "Estatística Aplicada para Negócios",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Desafio de Dados",
             },
             {
               id: 5,
-              titulo: "Curso 5",
+              titulo: "Inovação e Empreendedorismo",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Mentoria Colaborativa",
             },
             {
               id: 6,
-              titulo: "Curso 6",
+              titulo: "Gestão Ágil de Projetos",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Simulação de Sprint",
             },
           ],
         },
@@ -125,39 +137,39 @@ export default {
           cursos: [
             {
               id: 1,
-              titulo: "Curso 1",
+              titulo: "Boas Práticas de Git",
               cargaHoraria: "10h",
-              metodologia: "Vídeos e textos",
+              metodologia: "Quiz Interativo",
             },
             {
               id: 2,
-              titulo: "Curso 2",
+              titulo: "UX Writing Essentials",
               cargaHoraria: "8h",
-              metodologia: "Interativo",
+              metodologia: "Oficina de Escrita",
             },
             {
               id: 3,
-              titulo: "Curso 3",
+              titulo: "SEO e Otimização de Conteúdo",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Gamificação de Rankings",
             },
             {
               id: 4,
-              titulo: "Curso 4",
+              titulo: "Testes Automatizados com Selenium",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Laboratório Prático",
             },
             {
               id: 5,
-              titulo: "Curso 5",
+              titulo: "Introdução ao Docker",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Oficina de Containers",
             },
             {
               id: 6,
-              titulo: "Curso 6",
+              titulo: "Automação de Tarefas com Bash",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Hackathon de Scripts",
             },
           ],
         },
@@ -167,39 +179,39 @@ export default {
           cursos: [
             {
               id: 1,
-              titulo: "Curso 1",
+              titulo: "Workshop de Realidade Aumentada",
               cargaHoraria: "10h",
-              metodologia: "Vídeos e textos",
+              metodologia: "Mão na Massa AR",
             },
             {
               id: 2,
-              titulo: "Curso 2",
+              titulo: "Hackathon de Mobilidade Urbana",
               cargaHoraria: "8h",
-              metodologia: "Interativo",
+              metodologia: "Maratona de Ideias",
             },
             {
               id: 3,
-              titulo: "Curso 3",
+              titulo: "Seminário de Sustentabilidade",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Debate Temático",
             },
             {
               id: 4,
-              titulo: "Curso 4",
+              titulo: "Palestra sobre Ética em IA",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Café com Especialista",
             },
             {
               id: 5,
-              titulo: "Curso 5",
+              titulo: "Jornada de Dados Abertos",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Trilha de Pesquisa",
             },
             {
               id: 6,
-              titulo: "Curso 6",
+              titulo: "Mesa Redonda de Inovação Social",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Painel Interativo",
             },
           ],
         },
@@ -209,43 +221,44 @@ export default {
           cursos: [
             {
               id: 1,
-              titulo: "Curso 1",
+              titulo: "Cidadania Digital e Segurança",
               cargaHoraria: "10h",
-              metodologia: "Vídeos e textos",
+              metodologia: "Role-Play Educativo",
             },
             {
               id: 2,
-              titulo: "Curso 2",
+              titulo: "Educação Financeira para Comunidades",
               cargaHoraria: "8h",
-              metodologia: "Interativo",
+              metodologia: "Banco Simulado",
             },
             {
               id: 3,
-              titulo: "Curso 3",
+              titulo: "Saúde Mental e Bem-Estar",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Dinâmica em Grupo",
             },
             {
               id: 4,
-              titulo: "Curso 4",
+              titulo: "Inclusão e Diversidade na Tecnologia",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Oficina de Sensibilização",
             },
             {
               id: 5,
-              titulo: "Curso 5",
+              titulo: "Comunicação Científica Avançada",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Oficina de Abstract",
             },
             {
               id: 6,
-              titulo: "Curso 6",
+              titulo: "Produção Audiovisual Comunitária",
               cargaHoraria: "12h",
-              metodologia: "Gamificação",
+              metodologia: "Filmagem Colaborativa",
             },
           ],
         },
       },
+
       titles: {
         mooc: "abertaMOOC - Cursos Gratuitos",
         micro: "abertaMICRO - Microaprendizagem",
