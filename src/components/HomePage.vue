@@ -1,28 +1,30 @@
 <template>
-    <Sidebar v-model="showLogin" title="Login">
-      <template>
-        <div>
-          <h2>Login</h2>
-          <form @submit.prevent="handleLogin">
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" id="email" v-model="email" required />
-            </div>
-            <div>
-              <label for="password">Password:</label>
-              <input type="password" id="password" v-model="password" required />
-            </div>
-            <button type="submit">Login</button>
-          </form>
-        </div>
-      </template>
-    </Sidebar>
+  <Sidebar v-model="showLogin" title="Login">
+    <template>
+      <div>
+        <h2>Login</h2>
+        <form @submit.prevent="handleLogin">
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" v-model="email" required />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" v-model="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </template>
+  </Sidebar>
 
   <Sidebar v-model="showCadastro" title="Cadastro">
     <div class="p-4">
       <form @submit.prevent="handleCadastro" class="space-y-4">
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="nome" class="block font-medium text-nowrap">Nome Completo:</label>
+          <label for="nome" class="block font-medium text-nowrap"
+            >Nome Completo:</label
+          >
           <input
             type="text"
             id="nome"
@@ -33,7 +35,9 @@
           />
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="email" class="block font-medium text-nowrap">Email:</label>
+          <label for="email" class="block font-medium text-nowrap"
+            >Email:</label
+          >
           <input
             type="email"
             id="email"
@@ -44,7 +48,9 @@
           />
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="password" class="block font-medium text-nowrap">Senha:</label>
+          <label for="password" class="block font-medium text-nowrap"
+            >Senha:</label
+          >
           <input
             type="password"
             id="password"
@@ -56,20 +62,26 @@
           />
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="confirmPassword" class="block font-medium text-nowrap">Confirmar Senha:</label>
+          <label for="confirmPassword" class="block font-medium text-nowrap"
+            >Confirmar Senha:</label
+          >
           <input
             type="password"
             id="confirmPassword"
             v-model="form.confirmPassword"
             required
-            :class="{'border-red-500': passwordsMismatch}"
+            :class="{ 'border-red-500': passwordsMismatch }"
             class="w-100 border rounded p-2"
             placeholder="Repita a senha"
           />
-          <p v-if="passwordsMismatch" class="text-red-500 text-sm">As senhas não conferem.</p>
+          <p v-if="passwordsMismatch" class="text-red-500 text-sm">
+            As senhas não conferem.
+          </p>
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="telefone" class="block font-medium text-nowrap">Telefone:</label>
+          <label for="telefone" class="block font-medium text-nowrap"
+            >Telefone:</label
+          >
           <input
             type="tel"
             id="telefone"
@@ -80,7 +92,9 @@
           />
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="dataNascimento" class="block font-medium text-nowrap">Data de Nascimento:</label>
+          <label for="dataNascimento" class="block font-medium text-nowrap"
+            >Data de Nascimento:</label
+          >
           <input
             type="date"
             id="dataNascimento"
@@ -89,7 +103,9 @@
           />
         </div>
         <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="genero" class="block font-medium text-nowrap">Gênero:</label>
+          <label for="genero" class="block font-medium text-nowrap"
+            >Gênero:</label
+          >
           <select
             id="genero"
             v-model="form.genero"
@@ -100,7 +116,7 @@
             <option value="feminino">Feminino</option>
             <option value="outro">Outro</option>
           </select>
-        </div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        </div>
         <div class="flex items-center">
           <input
             type="checkbox"
@@ -109,7 +125,8 @@
             class="mr-2"
           />
           <label for="termos" class="text-sm">
-            Concordo com os <a href="#" class="text-blue-600 underline">termos de uso</a>.
+            Concordo com os
+            <a href="#" class="text-blue-600 underline">termos de uso</a>.
           </label>
         </div>
         <button
@@ -123,16 +140,74 @@
     </div>
   </Sidebar>
 
+  <Sidebar v-model="showMensagens" title="Mensagens">
+    <div class="mensagens-container">
+      <h1 class="mensagens-title">Mensagens</h1>
+
+      <div class="mensagens-list">
+        <div
+          v-for="conversa in conversas"
+          :key="conversa.id"
+          class="conversa-item"
+        >
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="icon-user">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+              />
+            </svg>
+          </div>
+          <div class="conversa-content">
+            <div class="conversa-titulo">{{ conversa.titulo }}</div>
+            <div class="conversa-preview">{{ conversa.preview }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nova-conversa-button-wrapper">
+        <button class="nova-conversa-button">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="icon-plus">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+          </svg>
+          Nova conversa
+        </button>
+      </div>
+    </div>
+  </Sidebar>
+
+  <Sidebar v-model="showNotificacoes" title="Notificações">
+    <div class="notificacoes-container">
+      <h1 class="notificacoes-title">Notificações</h1>
+
+      <div class="notificacoes-list">
+        <div
+          v-for="notificacao in notificacoes"
+          :key="notificacao.id"
+          class="notificacao-item"
+        >
+          <div class="icon-placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="icon-bell">
+              <path
+                d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.93 6 11v5l-2 2v1h16v-1l-2-2z"
+              />
+            </svg>
+          </div>
+          <div class="notificacao-content">
+            <div class="notificacao-titulo">{{ notificacao.titulo }}</div>
+            <div class="notificacao-descricao">{{ notificacao.descricao }}</div>
+            <div class="notificacao-data">{{ notificacao.data }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Sidebar>
 
   <div class="">
     <div
       class="header d-flex flex-row justify-content-between align-items-center p-4"
-      >
+    >
       <!-- style="width: 1800px" -->
-      <img
-        :src="ufprVirtualLogo"
-        height="60px"
-      ></img>
+      <img :src="ufprVirtualLogo" height="60px" />
       <div class="d-flex flex-row align-items-center gap-5">
         <img
           :src="cadastrese"
@@ -148,7 +223,7 @@
           height="50px"
           @click="goToFazerLogin"
         />
-    </div>
+      </div>
     </div>
 
     <div
@@ -182,7 +257,7 @@
               alt="Eventos"
               class="menu-icon"
               height="100px"
-              @click="goToPage('eventos')"  
+              @click="goToPage('eventos')"
             />
             <img
               :src="extIcon"
@@ -266,6 +341,57 @@ export default {
     return {
       showLogin: false,
       showCadastro: false,
+      showMensagens: false,
+      showNotifications: false,
+      conversas: [
+        {
+          id: 1,
+          titulo: "Conversa 1",
+          preview: "Lorem ipsum dolor sit amet, consecte...",
+        },
+        {
+          id: 2,
+          titulo: "Conversa 2",
+          preview: "Lorem ipsum dolor sit amet, consecte...",
+        },
+        {
+          id: 3,
+          titulo: "Conversa 3",
+          preview: "Lorem ipsum dolor sit amet, consecte...",
+        },
+        {
+          id: 4,
+          titulo: "Conversa 4",
+          preview: "Lorem ipsum dolor sit amet, consecte...",
+        },
+      ],
+      notificacoes: [
+        {
+          id: 1,
+          titulo: "Nova Mensagem",
+          descricao: "Você recebeu uma nova mensagem de João.",
+          data: "Há 5 minutos",
+        },
+        {
+          id: 2,
+          titulo: "Atualização do Sistema",
+          descricao: "Seu perfil foi atualizado com sucesso.",
+          data: "Há 1 hora",
+        },
+        {
+          id: 3,
+          titulo: "Lembrete de Evento",
+          descricao: "Reunião de equipe agendada para amanhã às 10h.",
+          data: "Ontem",
+        },
+        {
+          id: 4,
+          titulo: "Promoção Exclusiva",
+          descricao: "Confira nossas novas ofertas especiais!",
+          data: "18 de Junho",
+        },
+      ],
+
       email: "",
       password: "",
       ufprVirtualLogo,
@@ -280,26 +406,24 @@ export default {
       sobreIcon,
       cadastrese,
       fazerlogin,
-            form: {
-        nome: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        telefone: '',
-        dataNascimento: '',
-        genero: '',
-        termos: false
-      }
-
+      form: {
+        nome: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        telefone: "",
+        dataNascimento: "",
+        genero: "",
+        termos: false,
+      },
     };
   },
-    computed: {
+  computed: {
     passwordsMismatch() {
       return (
-        this.form.password &&
-        this.form.password !== this.form.confirmPassword
-      )
-    }
+        this.form.password && this.form.password !== this.form.confirmPassword
+      );
+    },
   },
 
   methods: {
@@ -326,24 +450,24 @@ export default {
       this.showLogin = false;
     },
     handleCadastro() {
-      if (this.passwordsMismatch) return
+      if (this.passwordsMismatch) return;
       // this.$emit('submit', { ...this.form })
-      this.resetForm()
+      this.resetForm();
       this.showCadastro = false;
       console.log("Cadastro realizado com sucesso:", this.form);
     },
     resetForm() {
       this.form = {
-        nome: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        telefone: '',
-        dataNascimento: '',
-        genero: '',
-        termos: false
-      }
-    }
+        nome: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        telefone: "",
+        dataNascimento: "",
+        genero: "",
+        termos: false,
+      };
+    },
   },
 };
 </script>
