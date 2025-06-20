@@ -501,4 +501,231 @@ export default {
     color: #ed8038;
   }
 }
+.notificacoes-container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Um cinza claro para o fundo */
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.notificacoes-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.notificacoes-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 1px;
+}
+
+.notificacoes-list {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.notificacao-item {
+  display: flex;
+  align-items: flex-start; /* Alinhar ao topo para o texto */
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.notificacao-item:last-child {
+  border-bottom: none;
+}
+
+.icon-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.icon-bell {
+  width: 30px;
+  height: 30px;
+  color: #888;
+}
+
+.notificacao-content {
+  flex-grow: 1;
+}
+
+.notificacao-titulo {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.notificacao-descricao {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.notificacao-data {
+  font-size: 0.8em;
+  color: #999;
+}
+
+/* Estilos para um possível botão de ação (descomentar se usar) */
+/* .acao-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.acao-button {
+  background-color: #6c757d; // Cinza para ação secundária
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.acao-button:hover {
+  background-color: #5a6268;
+} */
+.mensagens-container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Um cinza claro para o fundo */
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Garante que padding não adicione largura */
+}
+
+.mensagens-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative; /* Para a linha decorativa */
+}
+
+.mensagens-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Ajuste para a esquerda */
+  transform: translateY(-50%);
+  width: 10px; /* Largura da linha */
+  height: 2px; /* Espessura da linha */
+  background-color: #000; /* Cor da linha */
+  border-radius: 1px;
+}
+
+.mensagens-list {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Para as bordas dos itens internos */
+}
+
+.conversa-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.conversa-item:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+.avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  flex-shrink: 0; /* Não permite que encolha */
+}
+
+.icon-user {
+  width: 30px;
+  height: 30px;
+  color: #888;
+}
+
+.conversa-content {
+  flex-grow: 1;
+}
+
+.conversa-titulo {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.conversa-preview {
+  font-size: 0.9em;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.nova-conversa-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.nova-conversa-button {
+  display: flex;
+  align-items: center;
+  background-color: #007bff; /* Azul vibrante */
+  color: #fff;
+  border: none;
+  border-radius: 25px; /* Botão arredondado */
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.nova-conversa-button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+.icon-plus {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #fff;
+}
 </style>
