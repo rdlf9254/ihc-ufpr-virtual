@@ -2,7 +2,7 @@
   <v-app>
     <AppBar />
     <v-main>
-      <HomePage />
+      <router-view />
     </v-main>
     <AppFooter />
   </v-app>
@@ -12,4 +12,5 @@
 import AppBar from "../components/AppBar.vue";
 import HomePage from "../components/HomePage.vue";
 import AppFooter from "../components/AppFooter.vue";
+import { RouterView } from "vue-router";
 </script>

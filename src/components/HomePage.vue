@@ -22,12 +22,19 @@
         </h2>
         <div class="menus d-flex flex-column gap-5">
           <div class="d-flex flex-row" style="gap: 50px">
-            <img :src="moocIcon" alt="MOOC" class="menu-icon" height="100px" />
+            <img
+              :src="moocIcon"
+              alt="MOOC"
+              class="menu-icon"
+              height="100px"
+              @click="goToPage('mooc')"
+            />
             <img
               :src="microsIcon"
               alt="Micros"
               class="menu-icon"
               height="100px"
+              @click="goToPage('micros')"
             />
           </div>
           <div class="d-flex flex-row" style="gap: 50px">
@@ -36,18 +43,20 @@
               alt="Eventos"
               class="menu-icon"
               height="100px"
+              @click="goToPage('eventos')"  
             />
             <img
               :src="extIcon"
               alt="Extensão"
               class="menu-icon"
               height="100px"
+              @click="goToPage('extensao')"
             />
           </div>
         </div>
       </div>
 
-      <img :src="muie" alt="Extensão" class="" height="350px" />
+      <img :src="muie" alt="muie" class="" height="350px" />
     </div>
   </div>
 
@@ -94,7 +103,7 @@
   </v-container>
 </template>
 
-<script setup>
+<script>
 import ufprVirtualLogo from "../assets/ufprvirtual.png";
 import moocIcon from "../assets/menus/mooc.svg";
 import microsIcon from "../assets/menus/micros.svg";
@@ -105,6 +114,36 @@ import suporteIcon from "../assets/menus2/suporte.svg";
 import virtualIcon from "../assets/menus2/virtual.svg";
 import oficialIcon from "../assets/menus2/oficial.svg";
 import sobreIcon from "../assets/menus2/sobre.svg";
+import router from "../router";
+
+export default {
+  name: "HomePage",
+  data() {
+    return {
+      ufprVirtualLogo,
+      moocIcon,
+      microsIcon,
+      eventosIcon,
+      muie,
+      extIcon,
+      suporteIcon,
+      virtualIcon,
+      oficialIcon,
+      sobreIcon,
+    };
+  },
+  methods: {
+    increaseFont() {
+      document.body.style.fontSize = "larger";
+    },
+    decreaseFont() {
+      document.body.style.fontSize = "smaller";
+    },
+    goToPage(cursoId) {
+      this.$router.push({ name: "Curso", params: { cursoId } });
+    },
+  },
+};
 </script>
 
 <style scoped>
