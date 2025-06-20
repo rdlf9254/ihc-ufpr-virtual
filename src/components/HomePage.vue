@@ -17,6 +17,113 @@
         </div>
       </template>
     </Sidebar>
+
+  <Sidebar v-model="showCadastro" title="Cadastro">
+    <div class="p-4">
+      <form @submit.prevent="handleCadastro" class="space-y-4">
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="nome" class="block font-medium text-nowrap">Nome Completo:</label>
+          <input
+            type="text"
+            id="nome"
+            v-model="form.nome"
+            required
+            class="w-100 border rounded p-2"
+            placeholder="Digite seu nome completo"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="email" class="block font-medium text-nowrap">Email:</label>
+          <input
+            type="email"
+            id="email"
+            v-model="form.email"
+            required
+            class="w-100 border rounded p-2"
+            placeholder="exemplo@dominio.com"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="password" class="block font-medium text-nowrap">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            v-model="form.password"
+            required
+            minlength="6"
+            class="w-100 border rounded p-2"
+            placeholder="Mínimo 6 caracteres"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="confirmPassword" class="block font-medium text-nowrap">Confirmar Senha:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            v-model="form.confirmPassword"
+            required
+            :class="{'border-red-500': passwordsMismatch}"
+            class="w-100 border rounded p-2"
+            placeholder="Repita a senha"
+          />
+          <p v-if="passwordsMismatch" class="text-red-500 text-sm">As senhas não conferem.</p>
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="telefone" class="block font-medium text-nowrap">Telefone:</label>
+          <input
+            type="tel"
+            id="telefone"
+            v-model="form.telefone"
+            pattern="\d{10,11}"
+            class="w-100 border rounded p-2"
+            placeholder="(xx) xxxxx-xxxx"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="dataNascimento" class="block font-medium text-nowrap">Data de Nascimento:</label>
+          <input
+            type="date"
+            id="dataNascimento"
+            v-model="form.dataNascimento"
+            class="w-100 border rounded p-2"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+          <label for="genero" class="block font-medium text-nowrap">Gênero:</label>
+          <select
+            id="genero"
+            v-model="form.genero"
+            class="w-100 border rounded p-2"
+          >
+            <option value="">Selecione...</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="termos"
+            v-model="form.termos"
+            class="mr-2"
+          />
+          <label for="termos" class="text-sm">
+            Concordo com os <a href="#" class="text-blue-600 underline">termos de uso</a>.
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
+          :disabled="!form.termos || passwordsMismatch"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </Sidebar>
+
+
   <div class="">
     <div
       class="header d-flex flex-row justify-content-between align-items-center p-4"
@@ -173,8 +280,28 @@ export default {
       sobreIcon,
       cadastrese,
       fazerlogin,
+            form: {
+        nome: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        telefone: '',
+        dataNascimento: '',
+        genero: '',
+        termos: false
+      }
+
     };
   },
+    computed: {
+    passwordsMismatch() {
+      return (
+        this.form.password &&
+        this.form.password !== this.form.confirmPassword
+      )
+    }
+  },
+
   methods: {
     increaseFont() {
       document.body.style.fontSize = "larger";
@@ -199,12 +326,24 @@ export default {
       this.showLogin = false;
     },
     handleCadastro() {
-      // Aqui você pode adicionar a lógica de cadastro
-      console.log("Email:", this.email);
-      console.log("Password:", this.password);
-      // Fechar o modal após o cadastro
+      if (this.passwordsMismatch) return
+      // this.$emit('submit', { ...this.form })
+      this.resetForm()
       this.showCadastro = false;
+      console.log("Cadastro realizado com sucesso:", this.form);
     },
+    resetForm() {
+      this.form = {
+        nome: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        telefone: '',
+        dataNascimento: '',
+        genero: '',
+        termos: false
+      }
+    }
   },
 };
 </script>
