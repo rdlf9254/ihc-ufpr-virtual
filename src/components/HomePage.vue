@@ -473,6 +473,9 @@ export default {
     goToPage(cursoId) {
       this.$router.push({ name: "Curso", params: { cursoId } });
     },
+    gotoconfig() {
+      this.$router.push({ name: "Config" });
+    },
     goToFazerLogin() {
       this.showLogin = true;
     },
