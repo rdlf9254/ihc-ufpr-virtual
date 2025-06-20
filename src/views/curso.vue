@@ -2,24 +2,13 @@
   <div id="app-container">
     <header class="main-header">
       <div class="header-top">
-        <a href="#" class="back-link" @click="gotoHome()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-arrow-left"
-          >
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          <span>Voltar</span>
-        </a>
+        <img
+          :src="voltar"
+          alt="Voltar"
+          class="menu-icon"
+          height="50px"
+          @click="goToHome"
+        />
         <div class="font-controls">
           <button class="font-button">A+ aumentar fonte</button>
           <button class="font-button">A- diminuir fonte</button>
@@ -81,10 +70,13 @@
 </template>
 
 <script>
+import voltar from '../assets/menus/voltar.svg';
+
 export default {
   name: "Cursos",
   data() {
     return {
+      voltar,
       cursoData: null,
       cursoId: null,
       // Dados dos cursos
@@ -501,5 +493,16 @@ export default {
   .course-grid {
     grid-template-columns: 1fr;
   }
+}
+.menu-icon {
+  /* width: 48px; */
+  /* height: 48px; */
+  /* margin: 0 8px; */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
 }
 </style>
