@@ -1,15 +1,47 @@
 <template>
+    <Sidebar v-model="showLogin" title="Login">
+      <template>
+        <div>
+          <h2>Login</h2>
+          <form @submit.prevent="handleLogin">
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" v-model="email" required />
+            </div>
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" id="password" v-model="password" required />
+            </div>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </template>
+    </Sidebar>
   <div class="">
     <div
-      class="header d-flex flex-row justify-content-between"
-      style="width: 1800px"
-    >
-      <v-img
+      class="header d-flex flex-row justify-content-between align-items-center p-4"
+      >
+      <!-- style="width: 1800px" -->
+      <img
         :src="ufprVirtualLogo"
-        max-height="60"
-        contain
-        class="mx-auto"
-      ></v-img>
+        height="60px"
+      ></img>
+      <div class="d-flex flex-row align-items-center gap-5">
+        <img
+          :src="cadastrese"
+          alt="Cadastre-se"
+          class="menu-icon"
+          height="50px"
+          @click="goToCadastrese"
+        />
+        <img
+          :src="fazerlogin"
+          alt="Fazer login"
+          class="menu-icon"
+          height="50px"
+          @click="goToFazerLogin"
+        />
+    </div>
     </div>
 
     <div
@@ -114,12 +146,21 @@ import suporteIcon from "../assets/menus2/suporte.svg";
 import virtualIcon from "../assets/menus2/virtual.svg";
 import oficialIcon from "../assets/menus2/oficial.svg";
 import sobreIcon from "../assets/menus2/sobre.svg";
-import router from "../router";
+import cadastrese from "../assets/menus/cadastrese.svg";
+import fazerlogin from "../assets/menus/fazerlogin.svg";
+import Sidebar from "./Sidebar.vue";
 
 export default {
   name: "HomePage",
+  components: {
+    Sidebar,
+  },
   data() {
     return {
+      showLogin: false,
+      showCadastro: false,
+      email: "",
+      password: "",
       ufprVirtualLogo,
       moocIcon,
       microsIcon,
@@ -130,6 +171,8 @@ export default {
       virtualIcon,
       oficialIcon,
       sobreIcon,
+      cadastrese,
+      fazerlogin,
     };
   },
   methods: {
@@ -141,6 +184,26 @@ export default {
     },
     goToPage(cursoId) {
       this.$router.push({ name: "Curso", params: { cursoId } });
+    },
+    goToFazerLogin() {
+      this.showLogin = true;
+    },
+    goToCadastrese() {
+      this.showCadastro = true;
+    },
+    handleLogin() {
+      // Aqui você pode adicionar a lógica de autenticação
+      console.log("Email:", this.email);
+      console.log("Password:", this.password);
+      // Fechar o modal após o login
+      this.showLogin = false;
+    },
+    handleCadastro() {
+      // Aqui você pode adicionar a lógica de cadastro
+      console.log("Email:", this.email);
+      console.log("Password:", this.password);
+      // Fechar o modal após o cadastro
+      this.showCadastro = false;
     },
   },
 };

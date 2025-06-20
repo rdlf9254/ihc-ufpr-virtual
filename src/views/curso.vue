@@ -269,18 +269,6 @@ export default {
     };
   },
   computed: {
-    // cursoId() {
-    //   return this.$route.params.cursoId;
-    // },
-    // cursos() {
-    //   return this.dados[this.cursoId]?.cursos ?? null;
-    // },
-    // corHead() {
-    //   return this.dados[this.cursoId]?.corHead ?? null;
-    // },
-    // corBotao() {
-    //   return this.dados[this.cursoId]?.corBotao ?? null;
-    // },
   },
   mounted() {
     this.cursoId = this.$route.params.cursoId;
@@ -442,7 +430,10 @@ export default {
   border-radius: 20px;
   font-size: 0.875rem;
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
+	width: min-content;
+	white-space: nowrap;
+	align-self: flex-end;
   bottom: 1.5rem;
   right: 1.5rem;
   transition: background-color 0.3s ease;
