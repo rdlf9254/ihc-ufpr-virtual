@@ -176,7 +176,6 @@
 
   <Sidebar v-model="showNotifications" title="Notificações">
     <div class="notificacoes-container">
-      <h1 class="notificacoes-title">Notificações</h1>
 
       <div class="notificacoes-list">
         <div
@@ -361,6 +360,7 @@ import cadastrese from "../assets/menus/cadastrese.svg";
 import meuscursos from "../assets/menus/meuscursos.svg";
 import notificacoesbtn from "../assets/menus/notificacoes.svg";
 import batepapo from "../assets/menus/batebapo.svg";
+import user from "../assets/menus/user.svg";
 import fazerlogin from "../assets/menus/fazerlogin.svg";
 import Sidebar from "./Sidebar.vue";
 
@@ -373,6 +373,7 @@ export default {
     return {
       notificacoesbtn,
       batepapo,
+      user,
       showLogin: false,
       showCadastro: false,
       showMensagens: false,
@@ -539,9 +540,9 @@ export default {
 }
 .notificacoes-container {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Um cinza claro para o fundo */
+  /* background-color: #f0f0f0; Um cinza claro para o fundo */
   padding: 20px;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: 20px auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
