@@ -215,6 +215,48 @@ export default {
             },
           ],
         },
+        meusCursos: {
+          corHead: "#6959EA",
+          corBotao: "#A2DD28",
+          cursos: [
+            {
+              id: 1,
+              titulo: "Cidadania Digital e Segurança",
+              cargaHoraria: "10h",
+              metodologia: "Role-Play Educativo",
+            },
+            {
+              id: 2,
+              titulo: "Educação Financeira para Comunidades",
+              cargaHoraria: "8h",
+              metodologia: "Banco Simulado",
+            },
+            {
+              id: 3,
+              titulo: "Saúde Mental e Bem-Estar",
+              cargaHoraria: "12h",
+              metodologia: "Dinâmica em Grupo",
+            },
+            {
+              id: 4,
+              titulo: "Inclusão e Diversidade na Tecnologia",
+              cargaHoraria: "12h",
+              metodologia: "Oficina de Sensibilização",
+            },
+            {
+              id: 5,
+              titulo: "Comunicação Científica Avançada",
+              cargaHoraria: "12h",
+              metodologia: "Oficina de Abstract",
+            },
+            {
+              id: 6,
+              titulo: "Produção Audiovisual Comunitária",
+              cargaHoraria: "12h",
+              metodologia: "Filmagem Colaborativa",
+            },
+          ],
+        },
         extensao: {
           corHead: "#6959EA",
           corBotao: "#A2DD28",
@@ -264,6 +306,7 @@ export default {
         micro: "abertaMICRO - Microaprendizagem",
         eventos: "abertaEVENTOS - Eventos Online",
         extensao: "abertaEXT - Ações de Extensão",
+        meusCursos: "Meus Cursos",
       },
       title: "Cursos",
     };

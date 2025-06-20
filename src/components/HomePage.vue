@@ -142,7 +142,6 @@
 
   <Sidebar v-model="showMensagens" title="Mensagens">
     <div class="mensagens-container">
-      <h1 class="mensagens-title">Mensagens</h1>
 
       <div class="mensagens-list">
         <div
@@ -175,7 +174,7 @@
     </div>
   </Sidebar>
 
-  <Sidebar v-model="showNotificacoes" title="Notificações">
+  <Sidebar v-model="showNotifications" title="Notificações">
     <div class="notificacoes-container">
       <h1 class="notificacoes-title">Notificações</h1>
 
@@ -208,7 +207,7 @@
     >
       <!-- style="width: 1800px" -->
       <img :src="ufprVirtualLogo" height="60px" />
-      <div class="d-flex flex-row align-items-center gap-5">
+      <div v-if="!loged" class="d-flex flex-row align-items-center gap-5">
         <img
           :src="cadastrese"
           alt="Cadastre-se"
@@ -222,6 +221,36 @@
           class="menu-icon"
           height="50px"
           @click="goToFazerLogin"
+        />
+      </div>
+      <div v-if="loged" class="d-flex flex-row align-items-center gap-5">
+        <img
+          :src="meuscursos"
+          alt="cursos"
+          class="menu-icon"
+          height="50px"
+          @click="goToPage('meusCursos')"
+        />
+        <img
+          :src="notificacoesbtn"
+          alt="notificações"
+          class="menu-icon"
+          height="50px"
+          @click="showNotifications = true"
+        />
+        <img
+          :src="batepapo"
+          alt="bate-papo"
+          class="menu-icon"
+          height="50px"
+          @click="showMensagens = true"
+        />
+        <img
+          :src="user"
+          alt="usuário"
+          class="menu-icon"
+          height="50px"
+          @click="gotoconfig"
         />
       </div>
     </div>
@@ -329,6 +358,9 @@ import virtualIcon from "../assets/menus2/virtual.svg";
 import oficialIcon from "../assets/menus2/oficial.svg";
 import sobreIcon from "../assets/menus2/sobre.svg";
 import cadastrese from "../assets/menus/cadastrese.svg";
+import meuscursos from "../assets/menus/meuscursos.svg";
+import notificacoesbtn from "../assets/menus/notificacoes.svg";
+import batepapo from "../assets/menus/batebapo.svg";
 import fazerlogin from "../assets/menus/fazerlogin.svg";
 import Sidebar from "./Sidebar.vue";
 
@@ -339,10 +371,13 @@ export default {
   },
   data() {
     return {
+      notificacoesbtn,
+      batepapo,
       showLogin: false,
       showCadastro: false,
       showMensagens: false,
       showNotifications: false,
+      loged: true,
       conversas: [
         {
           id: 1,
@@ -405,6 +440,7 @@ export default {
       oficialIcon,
       sobreIcon,
       cadastrese,
+      meuscursos,
       fazerlogin,
       form: {
         nome: "",
@@ -614,9 +650,9 @@ export default {
 } */
 .mensagens-container {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Um cinza claro para o fundo */
+  /* background-color: #f0f0f0; Um cinza claro para o fundo */
   padding: 20px;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: 20px auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -644,7 +680,7 @@ export default {
 }
 
 .mensagens-list {
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 8px;
   overflow: hidden; /* Para as bordas dos itens internos */
 }
