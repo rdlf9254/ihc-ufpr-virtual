@@ -6,7 +6,7 @@
           alt="Voltar"
           class="menu-icon"
           height="50px"
-          @click="goToHome"
+          @click="gotoHome()"
         />
     </div>
 
@@ -83,15 +83,15 @@ export default {
     gotoHome() {
       this.$router.push({ name: "Home" });
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
 /* Estilos específicos para este componente */
 .container {
-  background-color: #f8f8f8; /* Fundo cinza claro */
-  min-height: 100vh; /* Ocupar toda a altura da viewport */
+  /* background-color: #f8f8f8; Fundo cinza claro */
+  min-height: calc(100vh - 150px); /* Ocupar toda a altura da viewport */
 }
 
 .profile-avatar-placeholder {

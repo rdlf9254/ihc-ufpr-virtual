@@ -142,7 +142,6 @@
 
   <Sidebar v-model="showMensagens" title="Mensagens">
     <div class="mensagens-container">
-
       <div class="mensagens-list">
         <div
           v-for="conversa in conversas"
@@ -176,7 +175,6 @@
 
   <Sidebar v-model="showNotifications" title="Notificações">
     <div class="notificacoes-container">
-
       <div class="notificacoes-list">
         <div
           v-for="notificacao in notificacoes"
@@ -200,149 +198,155 @@
     </div>
   </Sidebar>
 
-  <div class="">
-    <div
-      class="header d-flex flex-row justify-content-between align-items-center p-4"
-    >
-      <!-- style="width: 1800px" -->
-      <img :src="ufprVirtualLogo" height="60px" />
-      <div v-if="!loged" class="d-flex flex-row align-items-center gap-5">
-        <img
-          :src="cadastrese"
-          alt="Cadastre-se"
-          class="menu-icon"
-          height="50px"
-          @click="goToCadastrese"
-        />
-        <img
-          :src="fazerlogin"
-          alt="Fazer login"
-          class="menu-icon"
-          height="50px"
-          @click="goToFazerLogin"
-        />
-      </div>
-      <div v-if="loged" class="d-flex flex-row align-items-center gap-5">
-        <img
-          :src="meuscursos"
-          alt="cursos"
-          class="menu-icon"
-          height="50px"
-          @click="goToPage('meusCursos')"
-        />
-        <img
-          :src="notificacoesbtn"
-          alt="notificações"
-          class="menu-icon"
-          height="50px"
-          @click="showNotifications = true"
-        />
-        <img
-          :src="batepapo"
-          alt="bate-papo"
-          class="menu-icon"
-          height="50px"
-          @click="showMensagens = true"
-        />
-        <img
-          :src="user"
-          alt="usuário"
-          class="menu-icon"
-          height="50px"
-          @click="gotoconfig"
-        />
-      </div>
-    </div>
-
-    <div
-      class="d-flex flex-row justify-content-center align-items-center mt-4 mb-4 w-100"
-      style="background-color: #d9d9d9; gap: 50px"
-    >
-      <div>
-        <h2 class="content-para text-h5 mb-4">
-          Conteúdos para <span>você</span>
-        </h2>
-        <div class="menus d-flex flex-column gap-5">
-          <div class="d-flex flex-row" style="gap: 50px">
-            <img
-              :src="moocIcon"
-              alt="MOOC"
-              class="menu-icon"
-              height="100px"
-              @click="goToPage('mooc')"
-            />
-            <img
-              :src="microsIcon"
-              alt="micro"
-              class="menu-icon"
-              height="100px"
-              @click="goToPage('micro')"
-            />
-          </div>
-          <div class="d-flex flex-row" style="gap: 50px">
-            <img
-              :src="eventosIcon"
-              alt="Eventos"
-              class="menu-icon"
-              height="100px"
-              @click="goToPage('eventos')"
-            />
-            <img
-              :src="extIcon"
-              alt="Extensão"
-              class="menu-icon"
-              height="100px"
-              @click="goToPage('extensao')"
-            />
-          </div>
+  <div class="home-page">
+    <div class="">
+      <div
+        class="header d-flex flex-row justify-content-between align-items-center p-4"
+      >
+        <!-- style="width: 1800px" -->
+        <img :src="ufprVirtualLogo" height="60px" />
+        <div v-if="!loged" class="d-flex flex-row align-items-center gap-5">
+          <img
+            :src="cadastrese"
+            alt="Cadastre-se"
+            class="menu-icon"
+            height="50px"
+            @click="goToCadastrese"
+          />
+          <img
+            :src="fazerlogin"
+            alt="Fazer login"
+            class="menu-icon"
+            height="50px"
+            @click="goToFazerLogin"
+          />
+        </div>
+        <div v-if="loged" class="d-flex flex-row align-items-center gap-5">
+          <img
+            :src="meuscursos"
+            alt="cursos"
+            class="menu-icon"
+            height="50px"
+            @click="goToPage('meusCursos')"
+          />
+          <img
+            :src="notificacoesbtn"
+            alt="notificações"
+            class="menu-icon"
+            height="50px"
+            @click="showNotifications = true"
+          />
+          <img
+            :src="batepapo"
+            alt="bate-papo"
+            class="menu-icon"
+            height="50px"
+            @click="showMensagens = true"
+          />
+          <img
+            :src="user"
+            alt="usuário"
+            class="menu-icon"
+            height="50px"
+            @click="gotoconfig"
+          />
         </div>
       </div>
 
-      <img :src="muie" alt="muie" class="" height="350px" />
-    </div>
-  </div>
-
-  <div
-    class="menu2 d-flex flex-row justify-content-center"
-    style="gap: 5rem; width: 100vw"
-  >
-    <img :src="suporteIcon" alt="Suporte ao usuário" class="menu-icon" />
-    <img :src="virtualIcon" alt="UFPR Virtual" class="menu-icon" />
-    <img :src="oficialIcon" alt="Site oficial" class="menu-icon" />
-    <img :src="sobreIcon" alt="Sobre a UFPR Aberta" class="menu-icon" />
-  </div>
-  <v-container fluid class="mt-4 h-100 main-seadip">
-    <v-container>
-      <v-row align="center">
-        <v-col cols="12" md="4" class="d-flex justify-center justify-md-start">
-          <v-btn color="#007bff" dark class="mr-4">Acessibilidade</v-btn>
-          <v-btn color="#007bff" dark>Versão com libras</v-btn>
-        </v-col>
-        <v-col cols="12" md="4" class="text-center">
-          <v-img
-            src="/path/to/seadip-logo.png"
-            max-height="40"
-            contain
-            class="mx-auto"
-          ></v-img>
-          <div class="text-caption mt-2">
-            Superintendência de Educação a Distância <br />
-            © 2023 Todos os direitos reservados
+      <div
+        class="d-flex flex-row justify-content-center align-items-center mt-4 mb-4 w-100"
+        style="background-color: #d9d9d9; gap: 50px"
+      >
+        <div>
+          <h2 class="content-para text-h5 mb-4">
+            Conteúdos para <span>você</span>
+          </h2>
+          <div class="menus d-flex flex-column gap-5">
+            <div class="d-flex flex-row" style="gap: 50px">
+              <img
+                :src="moocIcon"
+                alt="MOOC"
+                class="menu-icon"
+                height="100px"
+                @click="goToPage('mooc')"
+              />
+              <img
+                :src="microsIcon"
+                alt="micro"
+                class="menu-icon"
+                height="100px"
+                @click="goToPage('micro')"
+              />
+            </div>
+            <div class="d-flex flex-row" style="gap: 50px">
+              <img
+                :src="eventosIcon"
+                alt="Eventos"
+                class="menu-icon"
+                height="100px"
+                @click="goToPage('eventos')"
+              />
+              <img
+                :src="extIcon"
+                alt="Extensão"
+                class="menu-icon"
+                height="100px"
+                @click="goToPage('extensao')"
+              />
+            </div>
           </div>
-        </v-col>
-        <v-col
-          cols="12"
-          md="4"
-          class="d-flex justify-center justify-md-end align-center"
-        >
-          <v-btn text small @click="increaseFont">A+</v-btn>
-          <span class="mx-2">aumentar fonte</span>
-          <v-btn text small @click="decreaseFont">A-</v-btn>
-          <span class="ml-2">diminuir fonte</span>
-        </v-col>
-      </v-row>
+        </div>
+
+        <img :src="muie" alt="muie" class="" height="350px" />
+      </div>
+    </div>
+
+    <div
+      class="menu2 d-flex flex-row justify-content-center"
+      style="gap: 5rem; width: 100vw"
+    >
+      <img :src="suporteIcon" alt="Suporte ao usuário" class="menu-icon" />
+      <img :src="virtualIcon" alt="UFPR Virtual" class="menu-icon" />
+      <img :src="oficialIcon" alt="Site oficial" class="menu-icon" />
+      <img :src="sobreIcon" alt="Sobre a UFPR Aberta" class="menu-icon" />
+    </div>
+    <v-container fluid class="mt-4 h-100 main-seadip">
+      <v-container>
+        <v-row align="center">
+          <v-col
+            cols="12"
+            md="4"
+            class="d-flex justify-center justify-md-start"
+          >
+            <v-btn color="#007bff" dark class="mr-4">Acessibilidade</v-btn>
+            <v-btn color="#007bff" dark>Versão com libras</v-btn>
+          </v-col>
+          <v-col cols="12" md="4" class="text-center">
+            <v-img
+              src="/path/to/seadip-logo.png"
+              max-height="40"
+              contain
+              class="mx-auto"
+            ></v-img>
+            <div class="text-caption mt-2">
+              Superintendência de Educação a Distância <br />
+              © 2023 Todos os direitos reservados
+            </div>
+          </v-col>
+          <v-col
+            cols="12"
+            md="4"
+            class="d-flex justify-center justify-md-end align-center"
+          >
+            <v-btn text small @click="increaseFont">A+</v-btn>
+            <span class="mx-2">aumentar fonte</span>
+            <v-btn text small @click="decreaseFont">A-</v-btn>
+            <span class="ml-2">diminuir fonte</span>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-container>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -513,6 +517,9 @@ export default {
 </script>
 
 <style scoped>
+.home-page {
+  min-height: calc(100vh - 150px); /* Ocupar toda a altura da viewport */
+}
 .main-seadip {
   background-color: #f3f3f3;
 }
@@ -561,7 +568,7 @@ export default {
 }
 
 .notificacoes-title::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: -20px;
@@ -672,7 +679,7 @@ export default {
 }
 
 .mensagens-title::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: -20px; /* Ajuste para a esquerda */
