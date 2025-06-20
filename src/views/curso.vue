@@ -3,7 +3,21 @@
     <header class="main-header">
       <div class="header-top">
         <a href="#" class="back-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-arrow-left"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
           <span>Voltar</span>
         </a>
         <div class="font-controls">
@@ -16,7 +30,21 @@
         <div class="search-container">
           <input type="text" placeholder="Buscar..." class="search-input" />
           <button class="search-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-search"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </button>
         </div>
       </div>
@@ -27,8 +55,12 @@
         <div class="card-header"></div>
         <div class="card-body">
           <h2 class="course-title">{{ curso.titulo }}</h2>
-          <p class="course-info"><strong>Carga Horária:</strong> {{ curso.cargaHoraria }}</p>
-          <p class="course-info"><strong>Metodologia:</strong> {{ curso.metodologia }}</p>
+          <p class="course-info">
+            <strong>Carga Horária:</strong> {{ curso.cargaHoraria }}
+          </p>
+          <p class="course-info">
+            <strong>Metodologia:</strong> {{ curso.metodologia }}
+          </p>
           <a href="#" class="details-button">Ver mais</a>
         </div>
       </div>
@@ -38,26 +70,82 @@
 
 <script>
 export default {
-  name: 'Cursos',
+  name: "Cursos",
   data() {
     return {
-      cursos: [
-        { id: 1, titulo: 'Curso 1', cargaHoraria: '10h', metodologia: 'Vídeos e textos' },
-        { id: 2, titulo: 'Curso 2', cargaHoraria: '8h', metodologia: 'Interativo' },
-        { id: 3, titulo: 'Curso 3', cargaHoraria: '12h', metodologia: 'Gamificação' },
-        { id: 4, titulo: 'Curso 4', cargaHoraria: '5h', metodologia: 'Podcast' },
-        { id: 5, titulo: 'Curso 5', cargaHoraria: '15h', metodologia: 'Estudo de caso' },
-        { id: 6, titulo: 'Curso 6', cargaHoraria: '20h', metodologia: 'Projetos práticos' }
-      ]
+      dados: {
+        mooc: {
+          corHead: "#00BCF4",
+          cotbotao: "#ED8038",
+          cursos: [
+            {
+              id: 1,
+              titulo: "Curso 1",
+              cargaHoraria: "10h",
+              metodologia: "Vídeos e textos",
+            },
+            {
+              id: 2,
+              titulo: "Curso 2",
+              cargaHoraria: "8h",
+              metodologia: "Interativo",
+            },
+            {
+              id: 3,
+              titulo: "Curso 3",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+          ],
+        },
+        micro: {
+          corHead: "#00BCF4",
+          cotbotao: "#ED8038",
+          cursos: [
+            {
+              id: 1,
+              titulo: "Curso 1",
+              cargaHoraria: "10h",
+              metodologia: "Vídeos e textos",
+            },
+            {
+              id: 2,
+              titulo: "Curso 2",
+              cargaHoraria: "8h",
+              metodologia: "Interativo",
+            },
+            {
+              id: 3,
+              titulo: "Curso 3",
+              cargaHoraria: "12h",
+              metodologia: "Gamificação",
+            },
+          ],
+        },
+      },
     };
-  }
-}
+  },
+  computed: {
+    cursoId() {
+      return this.$route.params.cursoId;
+    },
+    cursos() {
+      return this.dados[this.cursoId]?.cursos ?? null;
+    },
+    corHead() {
+      return this.dados[this.cursoId]?.corHead ?? null;
+    },
+    corBotao() {
+      return this.dados[this.cursoId]?.corBotao ?? null;
+    },
+  },
+};
 </script>
 
 <style scoped>
 /* Estilos Gerais */
 #app-container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
   min-height: 100vh;
   padding: 2rem 4rem;
@@ -159,12 +247,12 @@ export default {
 }
 
 .card-header {
-  background-color: #E67E22; /* Laranja da imagem */
+  background-color: #e67e22; /* Laranja da imagem */
   height: 40px;
 }
 
 .card-body {
-  background-color: #EAEAEA; /* Cinza claro da imagem */
+  background-color: #eaeaea; /* Cinza claro da imagem */
   padding: 1.5rem;
   flex-grow: 1;
   display: flex;
@@ -186,11 +274,11 @@ export default {
 }
 
 .course-info strong {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .details-button {
-  background-color: #3498DB; /* Azul da imagem */
+  background-color: #3498db; /* Azul da imagem */
   color: white;
   text-decoration: none;
   padding: 0.6rem 1.2rem;
@@ -204,7 +292,7 @@ export default {
 }
 
 .details-button:hover {
-  background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 /* Responsividade */
@@ -218,7 +306,7 @@ export default {
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .course-grid {
     grid-template-columns: 1fr;
   }
