@@ -51,8 +51,8 @@
     </header>
 
     <main class="course-grid">
-      <div v-for="curso in curso?.cursos" :key="curso.id" class="course-card">
-        <div class="card-header"></div>
+      <div v-for="curso in cursoData?.cursos" :key="curso.id" class="course-card">
+        <div class="card-header" :style="{ backgroundColor: cursoData.corHead }"></div>
         <div class="card-body">
           <h2 class="course-title">{{ curso.titulo }}</h2>
           <p class="course-info">
@@ -61,7 +61,7 @@
           <p class="course-info">
             <strong>Metodologia:</strong> {{ curso.metodologia }}
           </p>
-          <a href="#" class="details-button">Ver mais</a>
+          <a href="#" class="details-button" :style="{ backgroundColor: cursoData.corBotao }">Ver mais</a>
         </div>
       </div>
     </main>
@@ -73,7 +73,7 @@ export default {
   name: "Cursos",
   data() {
     return {
-      curso: null,
+      cursoData: null,
       cursoId: null,
       // Dados dos cursos
       dados: {
@@ -275,7 +275,7 @@ export default {
       console.log("nao achei");
       this.$router.push({ name: "Home" });
     } else {
-      this.curso = this.dados[this.cursoId] ?? null;
+      this.cursoData = this.dados[this.cursoId] ?? null;
       this.title = this.titles[this.cursoId] || "Cursos";
     }
   },
@@ -392,7 +392,6 @@ export default {
 }
 
 .card-header {
-  background-color: #e67e22; /* Laranja da imagem */
   height: 40px;
 }
 
