@@ -12,16 +12,24 @@
       ></v-img>
     </div>
 
-    <h2 class="content-para text-h5 mb-4">Conteúdos para <span>você</span></h2>
-    <div class="menus d-flex flex-column gap-5">
-      <div class="d-flex flex-row" style="gap: 150px">
-        <img :src="moocIcon" alt="MOOC" class="menu-icon" />
-        <img :src="microsIcon" alt="Micros" class="menu-icon" />
+
+    <div class="d-flex flex-row justify-content-center align-items-center mt-4 mb-4 w-100" style="background-color: #d9d9d9; gap: 50px">
+      <div>
+        <h2 class="content-para text-h5 mb-4">Conteúdos para <span>você</span></h2>
+        <div class="menus d-flex flex-column gap-5">
+          <div class="d-flex flex-row" style="gap: 50px">
+            <img :src="moocIcon" alt="MOOC" class="menu-icon" height="100px"/>
+            <img :src="microsIcon" alt="Micros" class="menu-icon" height="100px" />
+          </div>
+          <div class="d-flex flex-row" style="gap: 50px">
+            <img :src="eventosIcon" alt="Eventos" class="menu-icon" height="100px"/>
+            <img :src="extIcon" alt="Extensão" class="menu-icon" height="100px"/>
+          </div>
+        </div>
       </div>
-      <div class="d-flex flex-row" style="gap: 150px">
-        <img :src="eventosIcon" alt="Eventos" class="menu-icon" />
-        <img :src="extIcon" alt="Extensão" class="menu-icon" />
-      </div>
+      
+        <img :src="muie" alt="Extensão" class="" height="350px"/>
+        
     </div>
   </div>
 
@@ -73,6 +81,7 @@ import ufprVirtualLogo from "../assets/ufprvirtual.png";
 import moocIcon from "../assets/menus/mooc.svg";
 import microsIcon from "../assets/menus/micros.svg";
 import eventosIcon from "../assets/menus/eventos.svg";
+import muie from "../assets/Screenshot from 2025-06-19 21-04-29.png";
 import extIcon from "../assets/menus/ext.svg";
 import suporteIcon from "../assets/menus2/suporte.svg";
 import virtualIcon from "../assets/menus2/virtual.svg";
