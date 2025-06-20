@@ -314,27 +314,37 @@
       <v-container>
         <v-row align="center">
           <v-col
-            cols="12"
+            cols="6"
             md="4"
-            class="d-flex justify-center justify-md-start"
+            class="d-flex justify-center justify-md-start gap-3"
           >
-            <v-btn color="#007bff" dark class="mr-4">Acessibilidade</v-btn>
-            <v-btn color="#007bff" dark>Versão com libras</v-btn>
+          <img
+            :src="acessibilidades"
+            alt="Acessibilidade"
+            height="30px"
+            class="menu-icon"
+          />
+          <img
+            :src="Libras"
+            alt="Libras"
+            height="30px"
+            class="menu-icon"
+          />
           </v-col>
-          <v-col cols="12" md="4" class="text-center">
-            <v-img
+          <v-col cols="6" md="4" class="text-center">
+            <!-- <v-img
               src="/path/to/seadip-logo.png"
               max-height="40"
               contain
               class="mx-auto"
-            ></v-img>
+            ></v-img> -->
             <div class="text-caption mt-2">
               Superintendência de Educação a Distância <br />
               © 2023 Todos os direitos reservados
             </div>
           </v-col>
           <v-col
-            cols="12"
+            cols="6"
             md="4"
             class="d-flex justify-center justify-md-end align-center"
           >
@@ -364,6 +374,8 @@ import cadastrese from "../assets/menus/cadastrese.svg";
 import meuscursos from "../assets/menus/meuscursos.svg";
 import notificacoesbtn from "../assets/menus/notificacoes.svg";
 import batepapo from "../assets/menus/batebapo.svg";
+import acessibilidades from "../assets/menus/acessibilidades.svg";
+import Libras from "../assets/menus/libras.svg";
 import user from "../assets/menus/user.svg";
 import fazerlogin from "../assets/menus/fazerlogin.svg";
 import Sidebar from "./Sidebar.vue";
@@ -376,6 +388,8 @@ export default {
   data() {
     return {
       notificacoesbtn,
+      Libras,
+      acessibilidades,
       batepapo,
       user,
       showLogin: false,

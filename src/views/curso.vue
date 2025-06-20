@@ -7,7 +7,7 @@
           alt="Voltar"
           class="menu-icon"
           height="50px"
-          @click="goToHome"
+          @click="gotoHome"
         />
         <div class="font-controls">
           <button class="font-button">A+ aumentar fonte</button>
