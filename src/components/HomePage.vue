@@ -396,7 +396,7 @@ export default {
       showCadastro: false,
       showMensagens: false,
       showNotifications: false,
-      loged: true,
+      loged: false,
       conversas: [
         {
           id: 1,
