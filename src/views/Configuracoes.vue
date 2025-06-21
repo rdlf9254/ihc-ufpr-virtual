@@ -115,6 +115,11 @@
               Deletar perfil
             </button>
           </div>
+          <div class="col-md-6 col-lg-3">
+            <button class="btn btn-danger w-100 py-3 button-red" @click="gotoDev">
+              Desenvolvedores
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -133,6 +138,9 @@ export default {
   methods: {
     gotoHome() {
       this.$router.push({ name: "Home" });
+    },
+    gotoDev() {
+      this.$router.push({ name: "Desenvolvedores" });
     },
   },
 };

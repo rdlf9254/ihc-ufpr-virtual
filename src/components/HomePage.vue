@@ -495,7 +495,8 @@ export default {
       this.$router.push({ name: "Config" });
     },
     goToFazerLogin() {
-      this.showLogin = true;
+      // this.showLogin = true;
+      this.loged = true;
     },
     goToCadastrese() {
       this.showCadastro = true;
@@ -650,29 +651,6 @@ export default {
   color: #999;
 }
 
-/* Estilos para um possível botão de ação (descomentar se usar) */
-/* .acao-button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.acao-button {
-  background-color: #6c757d; // Cinza para ação secundária
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 25px;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.acao-button:hover {
-  background-color: #5a6268;
-} */
 .mensagens-container {
   font-family: Arial, sans-serif;
   /* background-color: #f0f0f0; Um cinza claro para o fundo */
