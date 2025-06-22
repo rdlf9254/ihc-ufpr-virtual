@@ -1,4 +1,4 @@
-📚 Projeto: IHC UFPR Virtual
+📚 Projeto: IHC UFPR aberta
 Este é um projeto frontend desenvolvido com Vue 3, utilizando Vite como bundler, Tailwind CSS para estilização utilitária e Vuetify como framework de componentes UI.
 
 🚀 Tecnologias utilizadas
