@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex w-100 justify-content-center align-items-center" style="background-color: #41557E; height: 95px">
+  <div class="d-flex flex-column w-100 justify-content-center align-items-center" style="background-color: #41557E; height: 95px">
     <svg
       width="170"
       height="66"
@@ -30,7 +30,16 @@
         />
       </defs>
     </svg>
+    <a
+      href="https://youtu.be/PV61OceBacc"
+      target="_blank"
+      class="btn btn-light mt-2 px-3 py-1"
+      style="font-size: 0.9rem; font-weight: 500; border-radius: 20px;"
+    >
+      ▶️ Conheça mais sobre o projeto
+    </a>
   </div>
+  
 </template>
 
 <script setup>

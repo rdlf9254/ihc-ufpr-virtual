@@ -469,7 +469,9 @@
       </v-container>
     </v-container>
   </div>
+  
 </template>
+
 
 <script>
 import ufprVirtualLogo from "../assets/ufprvirtual.png";
