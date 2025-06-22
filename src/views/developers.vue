@@ -18,25 +18,25 @@ export default {
     return {
       desenvolvedores: [
         {
-          nome: 'Ana Silva',
-          foto: 'https://randomuser.me/api/portraits/women/44.jpg',
-          curriculo: 'Desenvolvedora Frontend com foco em Vue.js e experiência em design de interfaces.',
-          linkedin: 'https://www.linkedin.com/in/ana-silva/',
-          ultimaAtualizacao: '20/06/2025'
+          nome: 'André Luis Morais Brito',
+          foto: 'https://media.licdn.com/dms/image/v2/D5603AQEy7B7_0qhoqQ/profile-displayphoto-shrink_200_200/B56ZNrfqgUG4AY-/0/1732675283608?e=1756339200&v=beta&t=cMXQ1b7jFPvpT5LWtZT067yETa40e582kwoAzJYekyE',
+          curriculo: 'Estudante de Análise e Desenvolvimento de Sistemas na UFPR, com interesse em tecnologia, programação e soluções inovadoras, sempre buscando novos aprendizados e desafios na área de TI.',
+          linkedin: 'https://www.linkedin.com/in/andre-brito-jpg/',
+          ultimaAtualizacao: '21/06/2025'
         },
         {
-          nome: 'Bruno Souza',
-          foto: 'https://randomuser.me/api/portraits/men/46.jpg',
-          curriculo: 'Backend Developer especializado em Node.js, APIs REST e bancos de dados SQL.',
-          linkedin: 'https://www.linkedin.com/in/bruno-souza/',
-          ultimaAtualizacao: '19/06/2025'
+          nome: 'Pedro Felipe Ribeiro',
+          foto: 'https://media.licdn.com/dms/image/v2/C4D03AQEv_u8kiM2qNA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1641684155617?e=1756339200&v=beta&t=-sasqPWG4bZEDIq_Q3vRX1un4-johFlXXdAS4Bt-9aE',
+          curriculo: 'Estudante de Análise e Desenvolvimento de Sistemas na UFPR, trainee em análise de dados na Bosch e em busca de novas oportunidades de crescimento na área.',
+          linkedin: 'http://linkedin.com/in/pedro-felipe-ribeiro-da-silva-485a8022a/',
+          ultimaAtualizacao: '21/06/2025'
         },
         {
-          nome: 'Carla Mendes',
-          foto: 'https://randomuser.me/api/portraits/women/48.jpg',
-          curriculo: 'Fullstack Developer com experiência em Vue, Node e desenvolvimento de apps escaláveis.',
-          linkedin: 'https://www.linkedin.com/in/carla-mendes/',
-          ultimaAtualizacao: '18/06/2025'
+          nome: 'Rodolfo C. dos Santos',
+          foto: 'https://media.licdn.com/dms/image/v2/D4D03AQEvHUWbyWdrqA/profile-displayphoto-shrink_400_400/B4DZaQ8YVsGsAg-/0/1746188470562?e=1755734400&v=beta&t=YZY1mdTQFIcFKaIaN46Isrcii5udqPgtIqze5V8-TLk',
+          curriculo: 'Fullstack Developer com experiência em Vue, Angular e desenvolvimento Python.',
+          linkedin: 'www.linkedin.com/in/rodolfocsnts',
+          ultimaAtualizacao: '21/06/2025'
         }
       ]
     };
