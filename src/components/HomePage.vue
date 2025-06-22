@@ -18,128 +18,240 @@
     </template>
   </Sidebar>
 
-  <Sidebar v-model="showCadastro" title="Cadastro">
-    <div class="p-4">
-      <form @submit.prevent="handleCadastro" class="space-y-4">
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="nome" class="block font-medium text-nowrap"
-            >Nome Completo:</label
-          >
-          <input
-            type="text"
-            id="nome"
-            v-model="form.nome"
-            required
-            class="w-100 border rounded p-2"
-            placeholder="Digite seu nome completo"
-          />
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="email" class="block font-medium text-nowrap"
-            >Email:</label
-          >
-          <input
-            type="email"
-            id="email"
-            v-model="form.email"
-            required
-            class="w-100 border rounded p-2"
-            placeholder="exemplo@dominio.com"
-          />
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="password" class="block font-medium text-nowrap"
-            >Senha:</label
-          >
-          <input
-            type="password"
-            id="password"
-            v-model="form.password"
-            required
-            minlength="6"
-            class="w-100 border rounded p-2"
-            placeholder="Mínimo 6 caracteres"
-          />
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="confirmPassword" class="block font-medium text-nowrap"
-            >Confirmar Senha:</label
-          >
-          <input
-            type="password"
-            id="confirmPassword"
-            v-model="form.confirmPassword"
-            required
-            :class="{ 'border-red-500': passwordsMismatch }"
-            class="w-100 border rounded p-2"
-            placeholder="Repita a senha"
-          />
-          <p v-if="passwordsMismatch" class="text-red-500 text-sm">
-            As senhas não conferem.
-          </p>
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="telefone" class="block font-medium text-nowrap"
-            >Telefone:</label
-          >
-          <input
-            type="tel"
-            id="telefone"
-            v-model="form.telefone"
-            pattern="\d{10,11}"
-            class="w-100 border rounded p-2"
-            placeholder="(xx) xxxxx-xxxx"
-          />
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="dataNascimento" class="block font-medium text-nowrap"
-            >Data de Nascimento:</label
-          >
-          <input
-            type="date"
-            id="dataNascimento"
-            v-model="form.dataNascimento"
-            class="w-100 border rounded p-2"
-          />
-        </div>
-        <div class="mb-4 d-flex flex-row gap-4 align-items-center">
-          <label for="genero" class="block font-medium text-nowrap"
-            >Gênero:</label
-          >
-          <select
-            id="genero"
-            v-model="form.genero"
-            class="w-100 border rounded p-2"
-          >
-            <option value="">Selecione...</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-        <div class="flex items-center">
-          <input
-            type="checkbox"
-            id="termos"
-            v-model="form.termos"
-            class="mr-2"
-          />
-          <label for="termos" class="text-sm">
-            Concordo com os
-            <a href="#" class="text-blue-600 underline">termos de uso</a>.
-          </label>
-        </div>
+<Sidebar v-model="showCadastro" title="Cadastro">
+  <div class="p-4">
+    <form @submit.prevent="handleCadastro" class="space-y-4">
+      <!-- Nome Completo -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="nome" class="block font-medium text-nowrap">Nome Completo:</label>
+        <input
+          type="text"
+          id="nome"
+          v-model="form.nome"
+          required
+          class="w-100 border rounded p-2"
+          placeholder="Digite seu nome completo"
+        />
+      </div>
+
+      <!-- CPF -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="cpf" class="block font-medium text-nowrap">CPF:</label>
+        <input
+          type="text"
+          id="cpf"
+          v-model="form.cpf"
+          required
+          pattern="\d{11}"
+          class="w-100 border rounded p-2"
+          placeholder="Apenas números, ex: 12345678901"
+        />
+      </div>
+
+      <!-- Data de Nascimento -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="dataNascimento" class="block font-medium text-nowrap">Data de Nascimento:</label>
+        <input
+          type="date"
+          id="dataNascimento"
+          v-model="form.dataNascimento"
+          class="w-100 border rounded p-2"
+        />
+      </div>
+
+      <!-- Gênero -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="genero" class="block font-medium text-nowrap">Gênero:</label>
+        <select
+          id="genero"
+          v-model="form.genero"
+          class="w-100 border rounded p-2"
+        >
+          <option value="">Selecione...</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <!-- Estado Civil -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="estadoCivil" class="block font-medium text-nowrap">Estado Civil:</label>
+        <select
+          id="estadoCivil"
+          v-model="form.estadoCivil"
+          class="w-100 border rounded p-2"
+        >
+          <option value="">Selecione...</option>
+          <option value="solteiro">Solteiro(a)</option>
+          <option value="casado">Casado(a)</option>
+          <option value="divorciado">Divorciado(a)</option>
+          <option value="viuvo">Viúvo(a)</option>
+        </select>
+      </div>
+
+      <!-- Nacionalidade -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="nacionalidade" class="block font-medium text-nowrap">Nacionalidade:</label>
+        <input
+          type="text"
+          id="nacionalidade"
+          v-model="form.nacionalidade"
+          class="w-100 border rounded p-2"
+          placeholder="Ex: Brasileiro"
+        />
+      </div>
+
+      <!-- Endereço -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="endereco" class="block font-medium text-nowrap">Endereço:</label>
+        <input
+          type="text"
+          id="endereco"
+          v-model="form.endereco"
+          class="w-100 border rounded p-2"
+          placeholder="Rua, número, bairro"
+        />
+      </div>
+
+      <!-- Cidade -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="cidade" class="block font-medium text-nowrap">Cidade:</label>
+        <input
+          type="text"
+          id="cidade"
+          v-model="form.cidade"
+          class="w-100 border rounded p-2"
+          placeholder="Digite sua cidade"
+        />
+      </div>
+
+      <!-- Estado -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="estado" class="block font-medium text-nowrap">Estado:</label>
+        <select
+          id="estado"
+          v-model="form.estado"
+          class="w-100 border rounded p-2"
+        >
+          <option value="">Selecione...</option>
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="RS">Rio Grande do Sul</option>
+        </select>
+      </div>
+
+      <!-- CEP -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="cep" class="block font-medium text-nowrap">CEP:</label>
+        <input
+          type="text"
+          id="cep"
+          v-model="form.cep"
+          pattern="\d{8}"
+          class="w-100 border rounded p-2"
+          placeholder="Digite apenas os números"
+        />
+      </div>
+
+      <!-- Telefone -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="telefone" class="block font-medium text-nowrap">Telefone:</label>
+        <input
+          type="tel"
+          id="telefone"
+          v-model="form.telefone"
+          pattern="\d{10,11}"
+          class="w-100 border rounded p-2"
+          placeholder="(xx) xxxxx-xxxx"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="email" class="block font-medium text-nowrap">Email:</label>
+        <input
+          type="email"
+          id="email"
+          v-model="form.email"
+          required
+          class="w-100 border rounded p-2"
+          placeholder="exemplo@dominio.com"
+        />
+      </div>
+
+      <!-- Nome de Usuário -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="usuario" class="block font-medium text-nowrap">Usuário:</label>
+        <input
+          type="text"
+          id="usuario"
+          v-model="form.usuario"
+          required
+          class="w-100 border rounded p-2"
+          placeholder="Escolha um nome de usuário"
+        />
+      </div>
+
+      <!-- Senha -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="password" class="block font-medium text-nowrap">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          v-model="form.password"
+          required
+          minlength="6"
+          class="w-100 border rounded p-2"
+          placeholder="Mínimo 6 caracteres"
+        />
+      </div>
+
+      <!-- Confirmar Senha -->
+      <div class="mb-4 d-flex flex-row gap-4 align-items-center">
+        <label for="confirmPassword" class="block font-medium text-nowrap">Confirmar Senha:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          v-model="form.confirmPassword"
+          required
+          :class="{ 'border-red-500': passwordsMismatch }"
+          class="w-100 border rounded p-2"
+          placeholder="Repita a senha"
+        />
+        <p v-if="passwordsMismatch" class="text-red-500 text-sm">
+          As senhas não conferem.
+        </p>
+      </div>
+
+      <!-- Termos de uso -->
+      <div class="flex items-center">
+        <input
+          type="checkbox"
+          id="termos"
+          v-model="form.termos"
+          class="mr-2"
+        />
+        <label for="termos" class="text-sm">
+          Concordo com os
+          <a href="#" class="text-blue-600 underline">termos de uso</a>.
+        </label>
+      </div>
+
+      <!-- Botão de Cadastrar -->
+      <div class="mt-4 text-center">
         <button
           type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
-          :disabled="!form.termos || passwordsMismatch"
+          class="bg-blue-500 text-black px-4 py-2 rounded"
+          
         >
           Cadastrar
         </button>
-      </form>
-    </div>
-  </Sidebar>
-
+      </div>
+    </form>
+  </div>
+</Sidebar>
   <Sidebar v-model="showMensagens" title="Mensagens">
     <div class="mensagens-container">
       <div class="mensagens-list">
